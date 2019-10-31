@@ -1,8 +1,8 @@
-\documentclass{article}
+\documentclass[a4paper,12pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage[pdftex]{graphicx}
-%notas para resolver: no me gusta que quede con tantos márgenes. Para el jueves 24 poner unos márgenes más pequeños.
+\usepackage{anysize}
 \providecommand{\keywords}[1]
 {
   \small	
@@ -12,7 +12,7 @@
 \title{Proyecto del curso: Latex y Git aplicado a la investigación científica}
 \author{Elena Campoy}
 \date{October 2019}
-
+\marginsize{2.2cm}{2.2cm}{2.2cm}{2.2cm}
 \begin{document}
 
 \maketitle
@@ -24,7 +24,7 @@ Inversions are a type of structural variation that has not been studied in detai
 \keywords{Inversion, paired-end mapping, disease}
 
 \section{Introduction}
-A chromosomal inversion is a type of structural variant that consists of a change in orientation of a segment of DNA \cite{puig_human_2015, giner-delgado_evolutionary_2019}. In spite of being the first type of genetic variant to be estudied, some of their characteristics make its detection and study complicated. For example, they do not mean a gain or lose of genetic information \cite{giner-delgado_evolutionary_2019}. Therefore, they still remain as one of the most difficult classes of genetic variation to identify and characterize \cite{puig_determining_2019} and a bit of effort has to be done to fully understand their role in genetic variation. 
+A chromosomal inversion is a type of structural variant that consists of a change in orientation of a segment of DNA \cite{puig_human_2015, giner-delgado_evolutionary_2019}. In spite of being the first type of genetic variant to be studied, some of their characteristics make its detection and study complicated. For example, they do not mean a gain or lose of genetic information \cite{giner-delgado_evolutionary_2019}. Therefore, they still remain as one of the most difficult classes of genetic variation to identify and characterize \cite{puig_determining_2019} and a bit of effort has to be done to fully understand their role in genetic variation. 
 \
 The main objective of this article is to summarize the most important information of inversions and the recent advances in their study. 
 %aqui puedo hablar un poco de drosophila
@@ -56,11 +56,11 @@ In the image below we can see a representation of both types of DNA repair mecha
 \end{figure}
 
 \
-As we can see, the type of mechanism by which the inversion is generated is related to the genome structure (the presence or absence of repeats) and it has also implications in the level of recurrence of an inversion. 
+As we can see, the type of mechanism by which the inversion is generated is related to the genome structure (the presence or absence of repeats) and it has also implications in the level of recurrence of an inversion. Normally, the inversions that occur through an event that is not related to genome structure have a low level of recurrence. In contrast, those that are present in a region that is prone to generate inversions through NAHR can happen more than once in a linage.
 
 
 \section{How to detect an inversion}
-It has been knwon for long that one of the main differences between our genome and others primates genomes is the presence of large chromosomal inversions. At the beginning, the efforts to identify inversions were done with cytogenic techniques that only allowed the detection of variants of several megabases. Later, traditional molecular approaches were also applied to the detection of inversions but the result was the same: most of the detected inversions were large. At present, new sequencing techniques have provided us with new methods and applications that can be used in the inversion detection \cite{puig_human_2015}. 
+It has been kwnon for long that one of the main differences between our genome and others primates genomes is the presence of large chromosomal inversions. At the beginning, the efforts to identify inversions were done with cytogenic techniques that only allowed the detection of variants of several megabases. Later, traditional molecular approaches were also applied to the detection of inversions but the result was the same: most of the detected inversions were large. At present, new sequencing techniques have provided us with new methods and applications that can be used in the inversion detection \cite{puig_human_2015}. 
 Some of the methods that are being currently used are:
 
 \begin{itemize}
@@ -73,7 +73,7 @@ PEM has some advantages over other methods. In first place, it increases the res
 \item {\bf Genome comparison.} 
 
 \
-{\em De novo} genome assembly has been essential in the construction of high quality reference genomes that has allowed numerous discoveries by genome comparison \cite{chin_phased_2016}. One of these applications is the discovery of structural variants, approach that has been already used (METER LO DE CLAUDIA DE LOS ESTUDIOS QUE LO USAN). The limitations that are faced using this approach are related to the construction of the genome: how the DNA library is built (read size), the assembler that is used, the characteristics of the genome itself (its complexity and length) or the time and computing resources employed to built the genome \cite{baker_novo_2012}. To try to overcome this difficulties, distinct methods have been developed that allow the use of algorithms  to compare contigs to reference genomes
+{\em De novo} genome assembly has been essential in the construction of high quality reference genomes that has allowed numerous discoveries by genome comparison \cite{chin_phased_2016}. One of these applications is the discovery of structural variants. The limitations that are faced using this approach are related to the construction of the genome: how the DNA library is built (read size), the assembler that is used, the characteristics of the genome itself (its complexity and length) or the time and computing resources employed to built the genome \cite{baker_novo_2012}. To try to overcome this difficulties, distinct methods have been developed that allow the use of algorithms  to compare contigs to reference genomes
 
 \item {\bf PacBio SMRT sequencing.} 
 
@@ -87,11 +87,11 @@ Some of its advantages are \cite{jiao_benchmark_2013}: it does not need PCR ampl
 \item {\bf Optical mapping.} 
 
 \
-This method allows the detection of bigger inversions than the methods previously described so it can be used in a complementary way. First, the DNA is digested by a nicking endonuclease that creates single-strand nicks that are repaired with fluorescent nucleotides. Then, the DNA is linearized in nanochannels and an imaged is created by a fuorescent microscopy. The final output is the optical map in which the resctriction sites on each DNA molecule are observable. In a comparison of this map with an optical map based on the reference genome SVs can be detected \cite{besenbacher_novel_2015, chin_phased_2016}.
+This method allows the detection of bigger inversions than the methods previously described so it can be used in a complementary way. First, the DNA is digested by a nicking endonuclease that creates single-strand nicks that are repaired with fluorescent nucleotides. Then, the DNA is linearized in nanochannels and an imaged is created by a fuorescent microscopy. The final output is the optical map in which the restriction sites on each DNA molecule are observable. In a comparison of this map with an optical map based on the reference genome SVs can be detected \cite{besenbacher_novel_2015, chin_phased_2016}.
 Optical mappings can overcome the difficulty of detecting large or complex SVs, being this the great contribution of the method. It has been demonstrated that, as whole Svs are easily contained in a single optical map, the larger an SV  is, the easier it is for the OMSV to detect it in a feasible and accurate way. This property makes optical mapping a great complement to the sequencing-based SV callers such as PE mapping that tends to be more accurate in the detection of smallers SVs \cite{li_omsv_2017}. Actually, optical mapping cannot detect balanced SVs like inversions if they are small and without a unique nick pattern \cite{mak_genome-wide_2016}.
 \
 
-Apart from the many advantages, this method has its own limitations and they are related to the generation of the optical map itself. First, the existence of false positives (false labels observed that are not true restrictions sites) or false negatives (true restriction sites that cannot be observed in the maps) because of non-specific enzymatic cuts or incomplete enzyme digestion, respectively. Second, the resolution of the imaging system (labels of close restriction sites can merge into a single label) and uncertainties in DNA measurements (sizing errors that are deviations between measured and actual distance between two restrictions sites due to DNA fragments that are not completely linearized). Third, the creation of “fragile sites” leading to double-stranded breaks because of neighboring nicking sites on opposite strands. Fourth, the requirement of a de novo assembly of the optical maps that makes the accuracy of the SVs calls to depend on the reliability of these procedures \cite{li_omsv_2017, mak_genome-wide_2016}. Fifth, there can be some inaccessible zones of the genome because of the lack of nicking sites for the nicking enzyme and finally, this technique does not offer single basepair resolution \cite{levy-sakin_genome_2019}.
+Apart from the many advantages, this method has its own limitations and they are related to the generation of the optical map itself. First, the existence of false positives (false labels observed that are not true restrictions sites) or false negatives (true restriction sites that cannot be observed in the maps) because of non-specific enzymatic cuts or incomplete enzyme digestion, respectively. Second, the resolution of the imaging system (labels of close restriction sites can merge into a single label) and uncertainties in DNA measurements (sizing errors that are deviations between measured and actual distance between two restrictions sites due to DNA fragments that are not completely linearized). Third, the creation of “fragile sites” leading to double-stranded breaks because of neighboring nicking sites on opposite strands. Fourth, the requirement of a {\em de novo} assembly of the optical maps that makes the accuracy of the SVs calls to depend on the reliability of these procedures \cite{li_omsv_2017, mak_genome-wide_2016}. Fifth, there can be some inaccessible zones of the genome because of the lack of nicking sites for the nicking enzyme and finally, this technique does not offer single basepair resolution \cite{levy-sakin_genome_2019}.
 
 \item {\bf Strand-seq method.}
 
@@ -111,7 +111,10 @@ Most of the inversions do not have any phenotypic effect of clinical significanc
 \
 However, some of them are related to some diseases caused by the disruption of one gene or by the alteration of a gene expression. Some of the inversions produce diseases in a recurrent way, such as in hemophilia A and Hunter syndrome \cite{puig_human_2015}. In the table below we can see some polymorphic inversions that have been associated to phenotypes or diseases:
 
+\
+
 \begin{table}[!htb] % [!htb] para que salga justo ahí que es donde quiero que salga
+\centering
 \begin{tabular}{|l|c|}
 \hline
 \multicolumn{1}{|c|}{\textbf{Inversion}} & \textbf{Effect}                                       \\ \hline
@@ -122,11 +125,17 @@ HsInv0472                                & Wolf-Hirschhorn syndrome             
 HsInv0301                                & Williams-Beuren syndrome                              \\ \hline
 HsInv0415                                & Sex reversal/male infertility                         \\ \hline
 \end{tabular}
+\begin{tablenotes}
+\small
+\item In this table we can see the effect that each inversion (left column) has. The name of each inversion is in reference to InvFEST database \cite{martinez-fundichely_invfest_2014}.
+\end{tablenotes}
 \end{table}
 
 \
-Appart from the clinical effects, there are some effects -that still need further study- produced by inversions: they are related to fertility problems or they can promote complex intrachromosomal arrengements and translocations. 
+
+Apart from the clinical effects, there are some effects -that still need further study- produced by inversions: they are related to fertility problems or they can promote complex intrachromosomal arrangements and translocations. 
 \newpage
 \bibliographystyle{plain}
 \bibliography{project.bib}
 \end{document}
+
