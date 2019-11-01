@@ -3,6 +3,7 @@
 \usepackage[english]{babel}
 \usepackage[pdftex]{graphicx}
 \usepackage{anysize}
+\usepackage{hyperref}
 \providecommand{\keywords}[1]
 {
   \small	
@@ -18,17 +19,22 @@
 \maketitle
 
 \begin{abstract}
-Inversions are a type of structural variation that has not been studied in detail. In this little project, I present some information about them: mechanisms of formation, detection methods and functional effects. Little by little, we are making progress in the inversion study.
+Inversions are a type of structural variation that has not been studied in detail due to their characteristics. Here I present some information about them: what they are, how are they formed, how can we detect them and some functional effects. In conclusion, as it has been difficult to deeply study them, we still do not know a lot about them. 
 \end{abstract}
 
-\keywords{Inversion, paired-end mapping, disease}
+\keywords{Inversion, adaptation, InvFEST, clinical effects}
 
 \section{Introduction}
-A chromosomal inversion is a type of structural variant that consists of a change in orientation of a segment of DNA \cite{puig_human_2015, giner-delgado_evolutionary_2019}. In spite of being the first type of genetic variant to be studied, some of their characteristics make its detection and study complicated. For example, they do not mean a gain or lose of genetic information \cite{giner-delgado_evolutionary_2019}. Therefore, they still remain as one of the most difficult classes of genetic variation to identify and characterize \cite{puig_determining_2019} and a bit of effort has to be done to fully understand their role in genetic variation. 
-\
-The main objective of this article is to summarize the most important information of inversions and the recent advances in their study. 
-%aqui puedo hablar un poco de drosophila
-\section{Human inversions}
+A chromosomal inversion is a type of structural variant that consists of a change in orientation of a segment of DNA \cite{puig_human_2015, giner-delgado_evolutionary_2019}. It happens when a chromosome breaks at two points and the segment bounded by the breakpoints is reinserted in the reversed orientation \cite{kirkpatrick_how_2010}. In spite of being the first type of genetic variant to be studied and detected in {\em Drosohpila} \cite{kirkpatrick_how_2010}, some of their characteristics make its detection and study complicated. For example, they do not mean a gain or lose of genetic information \cite{giner-delgado_evolutionary_2019}. Therefore, they still remain as one of the most difficult classes of genetic variation to identify and characterize \cite{puig_determining_2019} and a bit of effort has to be done to fully understand their role in genetic variation. It has also been known for long that one of the main differences between our genome and others primates genomes is the presence of large chromosomal inversions. In figure 1 we can see the distribution of inversions between both genomes.
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[scale=1]{figures/inversions_hch.png}
+    \caption{In this figure extracted from Kirkpatrick et al. 2010 \cite{kirkpatrick_how_2010} we can see the inversions that distinguish our genome and the chimpanzees }
+    \label{fig:invchimpanzees}
+\end{figure}
+Appart from that, it is not clear how many polymorphic inversions really exist in humans and very little is known about their global frequency and distribution \cite{giner-delgado_evolutionary_2019}.
+
+
 
 \subsection{Mechanism of formation}
 We can distinguish two main types of mechanisms of inversion formation: NAHR: Non-Allelic Homologous Recombination (NAHR) and Non-Homologous End Joining (NHEJ):
@@ -46,21 +52,28 @@ We can distinguish two main types of mechanisms of inversion formation: NAHR: No
     This is also a DSBs repair mechanism but it is not mediated by any repetitive element as it is a direct resealing of the DNA ends \cite{decottignies_alternative_2013}
 \end{itemize}
 
-\
-In the image below we can see a representation of both types of DNA repair mechanisms:
+In the figure 2 we can see a representation of both types of DNA repair mechanisms.
 \begin{figure}[!htb]
     \centering
-    \includegraphics[width=1\linewidth]{figures/mechanisms.jpg}
+    \includegraphics[scale=5]{figures/mechanisms.jpg}
     \caption{This figure \cite{decottignies_alternative_2013} represents both pathways to repair double-stranded breaks. We can observe NHEJ on the left and HR on the right}
     \label{fig:pathways}
 \end{figure}
 
 \
-As we can see, the type of mechanism by which the inversion is generated is related to the genome structure (the presence or absence of repeats) and it has also implications in the level of recurrence of an inversion. Normally, the inversions that occur through an event that is not related to genome structure have a low level of recurrence. In contrast, those that are present in a region that is prone to generate inversions through NAHR can happen more than once in a linage.
+Other mechanisms that can induce the formation of inversions are: microhomology-mediated end joining (MMEJ), fork stalling and template switching (FoSTeS) or microhomology-mediated break-induced replication (MMBIR) \cite{vicente-salvador_detailed_2017}. 
+
+\
+
+As we can see, the type of mechanism by which the inversion is generated is related to the genome structure (the presence or absence of repeats) and it has also implications in the level of recurrence of an inversion. Normally, the inversions that occur through an event that is not related to genome structure have a low level of recurrence. In contrast, those that are present in a region that is prone to generate inversions through NAHR can happen more than once in a linage. It has been found a high-degree of recurrence of all inversions mediated by highly-identical inverted repeats (IRs) that could be rearrangement hotspots in the genome \cite{giner-delgado_evolutionary_2019}. 
+
+\subsection{Data bases}
+Efforts have been made in order to have a reliable structural variants data set. In this sense, the Database of Genomics Variants has included inversions in its catalogue \cite{puig_human_2015}. More recently, \href{http://invfestdb.uab.cat/}{InvFEST database} database has emerged as a human polymorphic inversion catalogue that provides refined breakpoint locations, associations with genes and SDs, plus data on experimental validation, population frequency, known functional effects and evolutionary history \cite{martinez-fundichely_invfest_2014}.
 
 
 \section{How to detect an inversion}
-It has been kwnon for long that one of the main differences between our genome and others primates genomes is the presence of large chromosomal inversions. At the beginning, the efforts to identify inversions were done with cytogenic techniques that only allowed the detection of variants of several megabases. Later, traditional molecular approaches were also applied to the detection of inversions but the result was the same: most of the detected inversions were large. At present, new sequencing techniques have provided us with new methods and applications that can be used in the inversion detection \cite{puig_human_2015}. 
+
+At the beginning, the efforts to identify inversions were done with cytogenic techniques that only allowed the detection of variants of several megabases. Later, traditional molecular approaches were also applied to the detection of inversions but the result was the same: most of the detected inversions were large. At present, new sequencing techniques have provided us with new methods and applications that can be used in the inversion detection \cite{puig_human_2015}. 
 Some of the methods that are being currently used are:
 
 \begin{itemize}
@@ -105,7 +118,12 @@ Just as optical mapping, Stranq-seq method allows the identification of large SV
 \
 As it can be elucidated from the previous points, no method allows the identification of all the distinct types of SVs that the genome contains. For this reason, a multiplatform approach for the discovery of SVs has been proposed in order to define the full spectrum of human variation \cite{chaisson_multi-platform_2019}. Employing more than one detection algorithm results in a maximum sensitivity and specificity in SV discovery. Nevertheless, using all the available sequencing methods in a single study is not practical as it implies a high cost and work. Analyzing the trade-off between the cost and the sensitivity of a technique is essential to achieve the desired result \cite{chaisson_multi-platform_2019}. 
 \end{itemize}
+
+
 \section{What does an inversion do?}
+Due to all the difficulties to study inversions, we still lack of information that could be useful to answer some questions like: are inversions responsible of some diseases? Are they under positive or negative natural selection? Do their frequencies change between populations?
+
+\subsection{Clinical consequencies}
 Most of the inversions do not have any phenotypic effect of clinical significance. Normally, they show differences in frequency in different human populations \cite{puig_human_2015}. 
 
 \
@@ -132,8 +150,11 @@ HsInv0415                                & Sex reversal/male infertility        
 \end{table}
 
 \
-
+\subsection{Adaptative consequences}
 Apart from the clinical effects, there are some effects -that still need further study- produced by inversions: they are related to fertility problems or they can promote complex intrachromosomal arrangements and translocations. 
+
+\
+A case that has been deeply studied is the 17q21.31 inversion (HsInv0573). It seems to be under positive selection in Europeans: the inverted haplotype (H2) reaches high frequencies (∼10–35\%). It has been noticed that  women carrying either one or two copies of the inversion tend to have more children. However, other studies show that the high frequency of this haplotype might be the result of a founder effect instead of a positive selection.  \cite{puig_human_2015}.
 \newpage
 \bibliographystyle{plain}
 \bibliography{project.bib}
