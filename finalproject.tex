@@ -20,6 +20,12 @@
 
 \begin{abstract}
 Inversions are a type of structural variation that has not been studied in detail due to their characteristics. Here I present some information about them: what they are, how are they formed, how can we detect them and some functional effects. In conclusion, as it has been difficult to deeply study them, we still do not know a lot about them. 
+
+\
+The original code of this article is deposited here:
+
+\
+\href{https://github.com/elenacampoy/proyecto_final}{https://github.com/elenacampoy/proyecto\_final}.
 \end{abstract}
 
 \keywords{Inversion, adaptation, InvFEST, clinical effects}
@@ -61,6 +67,7 @@ In the figure 2 we can see a representation of both types of DNA repair mechanis
 \end{figure}
 
 \
+
 Other mechanisms that can induce the formation of inversions are: microhomology-mediated end joining (MMEJ), fork stalling and template switching (FoSTeS) or microhomology-mediated break-induced replication (MMBIR) \cite{vicente-salvador_detailed_2017}. 
 
 \
@@ -123,7 +130,7 @@ As it can be elucidated from the previous points, no method allows the identific
 \section{What does an inversion do?}
 Due to all the difficulties to study inversions, we still lack of information that could be useful to answer some questions like: are inversions responsible of some diseases? Are they under positive or negative natural selection? Do their frequencies change between populations?
 
-\subsection{Clinical consequencies}
+\subsection{Clinical effects}
 Most of the inversions do not have any phenotypic effect of clinical significance. Normally, they show differences in frequency in different human populations \cite{puig_human_2015}. 
 
 \
@@ -155,8 +162,17 @@ Apart from the clinical effects, there are some effects -that still need further
 
 \
 A case that has been deeply studied is the 17q21.31 inversion (HsInv0573). It seems to be under positive selection in Europeans: the inverted haplotype (H2) reaches high frequencies (∼10–35\%). It has been noticed that  women carrying either one or two copies of the inversion tend to have more children. However, other studies show that the high frequency of this haplotype might be the result of a founder effect instead of a positive selection.  \cite{puig_human_2015}.
+
+\
+At present, how inversions evolve is being studied (mainly by theorical models). For that, equations have to be developed in order to know the frequency of a inversion in a population after {\em n} generations or if certain inversion is under negative, neutral or positive selection. For example, the equation below is used to know the expected rate of the spread of an inversion \cite{kirkpatrick_chromosome_2006}. It shows that the rate of the spread is equal to the migration rate.
+
+
+\begin{equation}
+ \lambda = (1-m)\frac{W_{I}}{\bar{W}}=(1-m)\frac{{(1+s)^2}}{^(1+s\hat{p})^2}\approx 1+m
+ \label{Equation1}
+\end{equation}
+
 \newpage
 \bibliographystyle{plain}
 \bibliography{project.bib}
 \end{document}
-
